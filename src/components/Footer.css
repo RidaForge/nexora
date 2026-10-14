@@ -1,0 +1,365 @@
+/* ==========================================================================
+   NEXORA — PREMIUM EDITORIAL FOOTER
+   Awwwards-level closing statement, navigation & dynamic bottom bar
+   ========================================================================== */
+
+.footer-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-primary, #0A0A0A);
+  color: var(--text-primary, #F5F5F0);
+  padding: 8.5rem 2rem 3rem 2rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Restrained Ambient Lime Glow at Bottom */
+.footer-ambient-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 255, 0, 0.025) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* --------------------------------------------------------------------------
+   1. LARGE CLOSING STATEMENT & CTA AREA
+   -------------------------------------------------------------------------- */
+.footer-statement-wrap {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4.5rem;
+  align-items: flex-end;
+  margin-bottom: 7rem;
+  padding-bottom: 5.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.footer-h-line {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: clamp(2.75rem, 7.2vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  text-transform: uppercase;
+  color: var(--text-primary, #F5F5F0);
+  margin: 0;
+  will-change: transform, opacity;
+}
+
+.footer-headline-accent {
+  color: var(--accent-lime, #C8FF00);
+  display: inline-block;
+}
+
+.footer-statement-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.footer-lead {
+  font-family: var(--font-body, 'Inter Tight', sans-serif);
+  font-size: clamp(1.1rem, 1.55vw, 1.35rem);
+  line-height: 1.55;
+  color: var(--text-muted, #858585);
+  margin: 0;
+  max-width: 480px;
+}
+
+/* Prominent Glowing Pill CTA Button */
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.25rem 2.75rem;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0A0A0A;
+  background: linear-gradient(135deg, #C8FF00 0%, #96C800 100%);
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 14px 40px rgba(200, 255, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.footer-cta-btn:hover {
+  box-shadow: 0 18px 50px rgba(200, 255, 0, 0.5);
+}
+
+.footer-cta-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #0A0A0A;
+  color: var(--accent-lime, #C8FF00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.footer-cta-btn:hover .footer-cta-icon {
+  transform: translate(2px, -2px);
+}
+
+/* --------------------------------------------------------------------------
+   2. NAVIGATION & SOCIALS GRID
+   -------------------------------------------------------------------------- */
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3.5rem;
+  margin-bottom: 6.5rem;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 360px;
+}
+
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-primary, #F5F5F0);
+  text-transform: uppercase;
+}
+
+.footer-brand-desc {
+  font-family: var(--font-body, 'Inter Tight', sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted, #858585);
+  margin: 0;
+}
+
+.footer-col-title {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted, #858585);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.footer-link-item a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary, #F5F5F0);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link-item a:hover {
+  color: var(--accent-lime, #C8FF00);
+  transform: translateX(4px);
+}
+
+.footer-link-arrow {
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--accent-lime, #C8FF00);
+}
+
+.footer-link-item a:hover .footer-link-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.footer-placeholder-note {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dark, #555555);
+  margin-top: 0.75rem;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. BOTTOM BAR (Wordmark, Agency Tag, Year & Back to Top)
+   -------------------------------------------------------------------------- */
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #858585);
+  text-transform: uppercase;
+}
+
+.footer-bottom-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-meta-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--text-dark, #444444);
+}
+
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted, #858585);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+}
+
+.footer-back-to-top:hover {
+  color: var(--accent-lime, #C8FF00);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .footer-section {
+    padding: 6.5rem 1.75rem 2.5rem 1.75rem;
+  }
+
+  .footer-statement-wrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  .footer-nav-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .footer-social-col {
+    grid-column: span 1;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 4.5rem 1.25rem 2rem 1.25rem;
+  }
+
+  .footer-statement-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.15rem 2rem;
+  }
+
+  /* Single Column Stack */
+  .footer-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .footer-bottom-meta-dot {
+    display: none;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .footer-h-line,
+  .footer-cta-btn,
+  .footer-link-item a,
+  .footer-back-to-top {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

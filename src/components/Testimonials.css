@@ -1,0 +1,452 @@
+/* ==========================================================================
+   NEXORA — CLIENT TESTIMONIALS SECTION (EDITORIAL SPLIT SLIDER)
+   Awwwards-inspired typography-driven client feedback with coordinated GSAP motion
+   ========================================================================== */
+
+.testimonials-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-primary, #0A0A0A);
+  color: var(--text-primary, #F5F5F0);
+  padding: 8.5rem 2rem 9rem 2rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Restrained Ambient Lime Lighting */
+.testimonials-ambient-glow {
+  position: absolute;
+  top: 30%;
+  right: -5%;
+  width: 600px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 255, 0, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 1;
+}
+
+.testimonials-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* --------------------------------------------------------------------------
+   1. SECTION INTRO (Editorial Header)
+   -------------------------------------------------------------------------- */
+.testimonials-intro {
+  margin-bottom: 5.5rem;
+}
+
+.testimonials-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-muted, #858585);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.testimonials-eyebrow-accent {
+  color: var(--accent-lime, #C8FF00);
+}
+
+.testimonials-headline-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonials-h-line {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: clamp(2.5rem, 5.5vw, 5.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  text-transform: uppercase;
+  color: var(--text-primary, #F5F5F0);
+  margin: 0;
+  will-change: transform, opacity;
+}
+
+.testimonials-headline-accent {
+  color: var(--accent-lime, #C8FF00);
+  display: inline-block;
+}
+
+.testimonials-lead {
+  font-family: var(--font-body, 'Inter Tight', sans-serif);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text-muted, #858585);
+  max-width: 580px;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. MAIN TESTIMONIAL SPLIT SLIDER LAYOUT
+   -------------------------------------------------------------------------- */
+.testimonials-stage {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* LEFT SIDE: Oversized Quote & Typography */
+.testimonials-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.testimonials-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.testimonials-category-badge {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-lime, #C8FF00);
+  background: rgba(200, 255, 0, 0.06);
+  border: 1px solid rgba(200, 255, 0, 0.2);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.testimonials-quote-mark {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 5rem;
+  line-height: 0.6;
+  font-weight: 900;
+  color: var(--accent-lime, #C8FF00);
+  margin-bottom: 1.5rem;
+  user-select: none;
+}
+
+.testimonials-quote-wrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.testimonials-quote-text {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: clamp(1.75rem, 2.7vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.24;
+  color: var(--text-primary, #F5F5F0);
+  margin: 0;
+  will-change: transform, opacity;
+}
+
+.testimonials-indicator-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonials-counter {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.testimonials-counter-active {
+  color: var(--accent-lime, #C8FF00);
+}
+
+.testimonials-counter-divider {
+  color: var(--text-dark, #444444);
+}
+
+.testimonials-counter-total {
+  color: var(--text-muted, #858585);
+}
+
+/* RIGHT SIDE: Client Portrait & Information Card */
+.testimonials-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.testimonials-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.85) 0%, rgba(13, 13, 13, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 2rem;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  will-change: transform, opacity;
+  transition: border-color 0.4s ease;
+}
+
+.testimonials-card:hover {
+  border-color: rgba(200, 255, 0, 0.25);
+}
+
+.testimonials-portrait-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.8;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.75rem;
+  background-color: #161616;
+}
+
+.testimonials-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: contrast(105%) brightness(95%);
+  will-change: transform, opacity;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonials-card:hover .testimonials-portrait-img {
+  transform: scale(1.03);
+}
+
+.testimonials-placeholder-tag {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted, #858585);
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+}
+
+.testimonials-client-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.testimonials-client-name {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary, #F5F5F0);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.testimonials-client-role {
+  font-family: var(--font-body, 'Inter Tight', sans-serif);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-muted, #858585);
+  margin: 0;
+}
+
+.testimonials-client-company {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-lime, #C8FF00);
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. BOTTOM CONTROLS & PAGINATION
+   -------------------------------------------------------------------------- */
+.testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.75rem;
+}
+
+.testimonials-progress-track {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.testimonials-progress-dot {
+  width: 28px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonials-progress-dot.is-active {
+  width: 52px;
+  background-color: var(--accent-lime, #C8FF00);
+}
+
+.testimonials-nav-btns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.testimonials-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(18, 18, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary, #F5F5F0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+.testimonials-nav-btn:hover {
+  background: var(--accent-lime, #C8FF00);
+  color: #0A0A0A;
+  border-color: var(--accent-lime, #C8FF00);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.testimonials-nav-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.testimonials-nav-btn:focus-visible {
+  border-color: var(--accent-lime, #C8FF00);
+  box-shadow: 0 0 0 2px rgba(200, 255, 0, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .testimonials-section {
+    padding: 6.5rem 1.75rem 7rem 1.75rem;
+  }
+
+  .testimonials-stage {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+  }
+
+  .testimonials-quote-text {
+    font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  }
+
+  .testimonials-card {
+    max-width: 100%;
+    padding: 1.75rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 4.5rem 1.25rem 5rem 1.25rem;
+  }
+
+  .testimonials-intro {
+    margin-bottom: 3.5rem;
+  }
+
+  /* Single Column Stack */
+  .testimonials-stage {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2.25rem 0;
+  }
+
+  .testimonials-left {
+    min-height: auto;
+  }
+
+  .testimonials-quote-mark {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonials-quote-text {
+    font-size: clamp(1.4rem, 5.8vw, 1.85rem);
+    line-height: 1.3;
+  }
+
+  .testimonials-right {
+    justify-content: flex-start;
+  }
+
+  .testimonials-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .testimonials-portrait-frame {
+    aspect-ratio: 16 / 10;
+  }
+
+  .testimonials-controls {
+    flex-direction: column-reverse;
+    gap: 1.75rem;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .testimonials-nav-btns {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-quote-text,
+  .testimonials-portrait-img,
+  .testimonials-h-line,
+  .testimonials-nav-btn,
+  .testimonials-progress-dot {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
